@@ -160,7 +160,7 @@ nav{
     font-family:'Bebas Neue', sans-serif ;
     font-size: 40px;
     position: absolute; 
-    left: 43px;
+    left: 72px;
     top: 0px;
     margin: 0px;
     font-size: 16px;
@@ -219,10 +219,6 @@ nav ul {
     padding: 0px;
     text-decoration: none;
 }
-/* nav svg {
-    top: 60px;
-
-} */
 
 nav label {
     cursor: pointer;
@@ -249,7 +245,7 @@ nav label span:before, label span:after {
     display: block;
     height: 100%;
     position: absolute;
-    transition: all .2s ease-out;
+    transition: all .3s ease-out;
     width: 100%;
 }
 nav label span:before {
@@ -281,7 +277,7 @@ nav input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.st
     stroke:#EB5428;
     position:absolute;
     top: 0px;
-    right: 43px;
+    right: 72px;
     background-color:white;
     padding: 20px 20px;
 }
@@ -301,7 +297,7 @@ form input {
     top: 120px; 
     border-style: solid;
     border-color:#EB5428;
-    right: 95px;
+    right: 120px;
     height: 3em;
     width: 280px;
 }
@@ -311,7 +307,7 @@ form svg{
     top: 120px;
     background-color:#EB5428; 
     stroke:#F2F2F2;
-    right: 90px
+    right: 120px;
 }
 
 main {
@@ -457,7 +453,7 @@ footer p{
     }
     form input, form svg{
         top: 20px;
-        right: 140px;
+        right: 170px;
     }
 }
 
