@@ -4,7 +4,7 @@
 v2.0 | 20110126
 License: none (public domain)
 */
-html, body, div, span, applet, object, iframe,
+/* html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -25,15 +25,15 @@ time, mark, audio, video {
     vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Monofett&family=Montserrat:wght@400;700&family=Xanh+Mono:ital@1&display=swap');
+
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
 body {
     line-height: 1;
-}
-ol, ul {
-    list-style: none;
 }
 blockquote, q {
     quotes: none;
@@ -46,19 +46,430 @@ q:before, q:after {
 table {
     border-collapse: collapse;
     border-spacing: 0;
-}
+} 
+/*Design choices-----
+Color Palate: 
+ Black:      #0D0D0D
+ Light Gray: #F2F2F2
+ Aqua:       #7ABFBF
+ Light Aqua  rgba(122, 191, 191, .5)
+ Orange:     #EB5428
+
+
+font-family: 'Bebas Neue', sans-serif;
+font-family: 'Monofett', monospace;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Xanh Mono', monospace;
+*/
 /*-------Box Border-----*/
-* {
+/* * {
     box-sizing:border-box;
-    margin:0;
-    padding:0;
-  }
-html {
-    background-color: #020659;
-    font-family: Verdana, geneva, Tahoma, sans-serif;
-}
+  } */
+
 body {
-    width: 375px;
     margin: 0 auto;
-    background-color: #ffffff;
+    background-color:rgba(122, 191, 191, .5);
+    width: 414px;
+}
+.wrapper {
+    background-color: #F2F2F2;
+    margin-top: -30px;
+}
+/* header styles  */
+h1{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    margin-left:50%;
+    padding-top:180px;
+    padding-bottom: 0px;
+
+}
+li, dd, p, nav, input{
+    font-family: 'Montserrat', sans-serif;
+}
+dt{
+    font-family: 'Montserrat', sans-serif;
+}
+menu{
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+    padding:0 60px;
+    margin: 10px;
+}
+menu li{
+    list-style: none;
+    color:#EB5428;
+    position:relative; 
+    left: 0px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+header p{
+    padding: 0px 10px 10px 10px;
+}
+/* Recipe styles */
+#recipe h2{
+    padding-top: 20px;
+    margin-top: -18px
+    
+}
+
+#recipe dt {
+    margin-bottom: 0px;
+    font-weight: bold;
+} 
+
+
+/* Ingredients Section Styles  */
+#ingredients ul {
+    padding-left: 30px;
+    list-style: square;
+}
+#ingredients li{
+    padding: 8px;
+}
+#directions ol {
+    margin-right: 10px;
+}
+#directions li {
+    padding: 10px;
+}
+h2{
+    font-family: 'Bebas Neue', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    font-size: 30px;
+}
+p{
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 25px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    
+}
+/* Nav Styles */
+nav{
+    background-color:#F2F2F2;
+    font-family:'Bebas Neue', sans-serif ;
+    font-size: 40px;
+    position: absolute; 
+    left: 43px;
+    top: 0px;
+    margin: 0px;
+    font-size: 16px;
+}
+#logo{
+    position: absolute;
+    top: 0px;
+    margin-left:120px;
+    padding: 10px 80px;
+    background-color:#EB5428;
+
+} 
+nav li{
+    list-style: none;
+    position: relative;  
+    padding-left: 20px;
+  
+}
+nav h2 {
+    visibility: hidden;
+    position:absolute;
+    top:0px;
+    left: 5px;
+}
+#title{
+    padding: 10px;
+    color: black;
+    /* margin-top: 20px; */
+    /* position: relative; */
+}
+#titles, nav {
+    position: absolute;
+    /* margin-bottom: 20px; */
+    top: 0px;
+  
+}
+nav li img{
+    width: 15%;
+}
+nav ul{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+nav a{
+text-decoration: none;
+color:#EB5428;
+padding-bottom: 15px;
+display: inline-flex;
+}
+/*Hamburger Menu */
+nav ul { 
+    max-height:0;
+    overflow:hidden;
+    transition: max-height .3s ease-out;
+    padding: 0px;
+    text-decoration: none;
+}
+/* nav svg {
+    top: 60px;
+
+} */
+
+nav label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 20px;
+    position: relative;
+    user-select: none;
+    
+} 
+nav label span {
+    display: block;
+    height: 5px;
+    position: relative;
+    transition: background-color .3s ease-out;
+    width: 10px;
+    display:inline-flex;
+    visibility: hidden;
+}
+
+
+nav label span:before, label span:after {
+    background: #F2F2F2;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+nav label span:before {
+    top: 5px;
+}
+nav label span:after {
+    top: -5px;
+}
+nav input {
+    display: none;
+}
+nav input:checked ~ ul {
+    max-height: 500px;
+}
+ nav input:checked ~ label span {
+    background: transparent;
+}
+nav input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+nav input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+nav input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0; 
+}
+/*End Hamburger Menu*/
+#signin{
+    stroke:#EB5428;
+    position:absolute;
+    top: 0px;
+    right: 43px;
+    background-color:white;
+    padding: 20px 20px;
+}
+
+nav ul {
+    width: 100px;
+}
+nav p {
+    position:absolute;
+    color:black;
+    text-transform: uppercase;
+    top: 0px;
+    right:0px;
+}
+form input {
+    position:absolute;
+    top: 120px; 
+    border-style: solid;
+    border-color:#EB5428;
+    right: 95px;
+    height: 3em;
+    width: 280px;
+}
+
+form svg{
+    position: absolute;
+    top: 120px;
+    background-color:#EB5428; 
+    stroke:#F2F2F2;
+    right: 90px
+}
+
+main {
+    background-color:#F2F2F2;
+}
+/********************SIDE DISH SYTLE*****************/
+aside {
+    background-color: #7ABFBF;
+}
+.side-recipe {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.side-dish dd{
+    margin-left: 0;
+    font-weight: bold;
+    padding-top: 5px;
+
+}.side-dish dl{
+    margin-top: 0px;
+}
+.orng {
+    fill:#EB5428;
+}
+
+footer {
+    margin-top: 0px;
+    font-size: 20px;
+    background-color:#F2F2F2;
+}
+footer h2, footer h3{
+    visibility: hidden;
+    padding: 0;
+    margin:0;
+}
+footer ul{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    list-style: none;
+    margin-bottom:0px;
+    margin-top: 0px;
+
+}
+footer li{
+    font-size: 20px;
+    text-transform: uppercase;
+    color:#EB5428;
+    font-family: 'Bebas Neue', sans-serif;
+}
+footer svg{
+    padding: 10px;
+}
+footer img {
+    width:50%;
+    margin-left: 100px;
+    
+}
+footer p{
+    display:flex;
+    justify-content:center;
+    text-transform: uppercase;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+/*-----RESPONSIVE WEB DESIGN---*/
+
+@media only screen and (min-width: 414px){
+    body{
+        width: 414px;
+    }
+    header img {
+        width: 100%;
+    }
+    h1{
+        margin-left: 30%;
+    }
+    aside img{
+        width:70%;
+        padding: 10px;
+    }
+    nav ul{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #recipe dl{
+        margin-left: 10px;
+    }
+}
+@media only screen and (min-width: 768px){
+    body{
+        width: 768px;
+    }
+    header img{
+        width: 100%;
+    }
+    h1 {
+        margin-left: 40%;
+    }
+    nav{
+        
+        padding-top: 0px;
+        padding-bottom: 5px;
+        position: absolute;
+        top: 70px;
+    }
+    nav ul{
+        display:flex;
+        flex-direction: row;
+        width: 768px;
+        overflow:visible;
+        margin: 0 auto;
+        background-color: white;
+    }
+    nav svg{
+        visibility:hidden;
+    }
+    nav label{
+        visibility:hidden;
+    }
+    nav li img{
+        width: 60%;
+        padding-bottom: 5px;
+    }
+    nav li{
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 60px;
+    }
+    h1{
+        padding-top: 200px;
+        margin-left: 20px;
+    }
+
+
+  #logo{
+    position: absolute;
+    margin-left: 0px;
+    padding: 5px 10px;
+    }
+    form input, form svg{
+        top: 20px;
+        right: 140px;
+    }
+}
+
+
+@media only screen and (min-width: 1280px){
+    body{
+        width:1280px;
+    }
+    header img {
+        width: 39.84375%;
+    }
+    h1 {
+        margin-left:40%;
+    }
 }
